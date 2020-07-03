@@ -1,0 +1,1 @@
+setblock ~1 ~-1 ~ minecraft:dispenser[facing=up]{Items:[{Slot:0,id:minecart,Count:64},{Slot:1,id:minecart,Count:64},{Slot:2,id:minecart,Count:64},{Slot:3,id:minecart,Count:64},{Slot:4,id:minecart,Count:64},{Slot:5,id:minecart,Count:64},{Slot:6,id:minecart,Count:64},{Slot:7,id:minecart,Count:64},{Slot:8,id:minecart,Count:64},{Slot:9,id:minecart,Count:64}]}
