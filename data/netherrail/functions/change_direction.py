@@ -45,11 +45,12 @@ class MinecraftCommand:
             self.coordinates_east = self.coordinates
             self.convert_east_to_west()
             self.convert_east_to_south()
+            self.convert_south_to_north()
         elif self.fromDirection == "west":
             self.coordinates_west = self.coordinates
         else:
             logging.error("Invalid fromDirection")
-        
+    '''
     def convert_east_to_west(self):
         # To convert from east to west, X coordinate changes sign.
         if self.coordinates_east == []:
@@ -61,6 +62,35 @@ class MinecraftCommand:
                     self.coordinates_west.append(coordinate * (-1))
                 else:
                     self.coordinates_west.append(coordinate)
+                i = i + 1
+    '''
+    def convert_east_to_west(self):
+        # To convert between east and west, X coordinate changes sign.
+        self.convert_change_sign(self.coordinates_east, self.coordinates_west, 0)
+    
+    def convert_west_to_east(self):
+        # To convert between east and west, X coordinate changes sign.
+        self.convert_change_sign(self.coordinates_west, self.coordinates_east, 0)
+    
+    def convert_north_to_south(self):
+        # To convert between north and south, Z coordinate changes sign.
+        self.convert_change_sign(self.coordinates_north, self.coordinates_south, 1)
+    
+    def convert_south_to_north(self):
+        # To convert between north and south, Z coordinate changes sign.
+        self.convert_change_sign(self.coordinates_south, self.coordinates_north, 1)
+    
+    #change sign of coordinate given by numeral x=0, y=2, z=1
+    def convert_change_sign(self, fromCoordinates, toCoordinates, coordinate):
+        if fromCoordinates == []:
+            logging.error("No coordinates to convert from")
+        else:
+            i = coordinate
+            for coordinate in fromCoordinates:
+                if i%3 == 0:
+                    toCoordinates.append(coordinate * (-1))
+                else:
+                    toCoordinates.append(coordinate)
                 i = i + 1
     
     def convert_east_to_south(self):
