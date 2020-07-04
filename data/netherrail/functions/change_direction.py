@@ -134,8 +134,8 @@ class MinecraftCommand:
             for coordinate in self.coordinates_east:
                 if i%3 == 0:
                     self.coordinates_south[i+2] = coordinate
-                elif (i+2)%3 == 0:
-                    self.coordinates_south[i-1] = coordinate
+                elif (i+1)%3 == 0:
+                    self.coordinates_south[i-2] = coordinate
                 else:
                     pass
                     #self.coordinates_south[i] = coordinate
@@ -152,8 +152,8 @@ class MinecraftCommand:
             for coordinate in self.coordinates_south:
                 if i%3 == 0:
                     self.coordinates_east[i+2] = coordinate
-                elif (i+2)%3 == 0:
-                    self.coordinates_east[i-1] = coordinate
+                elif (i+1)%3 == 0:
+                    self.coordinates_east[i-2] = coordinate
                 else:
                     pass
                     #self.coordinates_east[i] = coordinate
