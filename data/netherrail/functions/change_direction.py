@@ -13,10 +13,16 @@ class MinecraftCommand:
         self.lineEnd = []
         self.coordinates = []
         numCoordinates = None
+        
         self.coordinates_north = []
         self.coordinates_south = []
         self.coordinates_east = []
         self.coordinates_west = []
+        
+        self.lineEnd_north = []
+        self.lineEnd_south = []
+        self.lineEnd_east = []
+        self.lineEnd_west = []
         
         for element in self.splitline:
             if '~' not in element:
@@ -35,18 +41,19 @@ class MinecraftCommand:
         self.lineEnd = self.lineEnd[self.numCoordinates:]
         
         self.convert_all()
+        self.convert_facing()
     
     def get_line_east(self):
-        return ' '.join(self.lineBeginning + self.convert_coordinate_to_string(self.coordinates_east) + self.lineEnd)
+        return ' '.join(self.lineBeginning + self.convert_coordinate_to_string(self.coordinates_east) + self.lineEnd_east)
     
     def get_line_west(self):
-        return ' '.join(self.lineBeginning + self.convert_coordinate_to_string(self.coordinates_west) + self.lineEnd)
+        return ' '.join(self.lineBeginning + self.convert_coordinate_to_string(self.coordinates_west) + self.lineEnd_west)
     
     def get_line_north(self):
-        return ' '.join(self.lineBeginning + self.convert_coordinate_to_string(self.coordinates_north) + self.lineEnd)
+        return ' '.join(self.lineBeginning + self.convert_coordinate_to_string(self.coordinates_north) + self.lineEnd_north)
     
     def get_line_south(self):
-        return ' '.join(self.lineBeginning + self.convert_coordinate_to_string(self.coordinates_south) + self.lineEnd)
+        return ' '.join(self.lineBeginning + self.convert_coordinate_to_string(self.coordinates_south) + self.lineEnd_south)
     
     def convert_coordinate_to_string(self, coordinates):
         coordinates_string = []
@@ -158,7 +165,36 @@ class MinecraftCommand:
                     pass
                     #self.coordinates_east[i] = coordinate
                 i = i + 1
-
+    
+    def convert_facing(self):
+        if self.fromDirection == "east":
+            for element in self.lineEnd:
+                if "facing=south" in element:
+                    self.lineEnd_north.append(element.replace("facing=south", "facing=east"))
+                    self.lineEnd_south.append(element.replace("facing=south", "facing=east"))
+                    self.lineEnd_east.append(element)
+                    self.lineEnd_west.append(element)
+                elif "facing=north" in element:
+                    self.lineEnd_north.append(element.replace("facing=north", "facing=west"))
+                    self.lineEnd_south.append(element.replace("facing=north", "facing=west"))
+                    self.lineEnd_east.append(element)
+                    self.lineEnd_west.append(element)
+                elif "facing=west" in element:
+                    self.lineEnd_north.append(element)
+                    self.lineEnd_south.append(element)
+                    self.lineEnd_east.append(element.replace("facing=west", "facing=north"))
+                    self.lineEnd_west.append(element.replace("facing=west", "facing=north"))
+                elif "facing=east" in element:
+                    self.lineEnd_north.append(element)
+                    self.lineEnd_south.append(element)
+                    self.lineEnd_east.append(element.replace("facing=east", "facing=south"))
+                    self.lineEnd_west.append(element.replace("facing=east", "facing=south"))
+                else:
+                    self.lineEnd_north.append(element)
+                    self.lineEnd_south.append(element)
+                    self.lineEnd_east.append(element)
+                    self.lineEnd_west.append(element)
+    
 validDirections = ["north", "south", "east", "west"]
 
 parser = argparse.ArgumentParser(description="Changes direction of minecraft functions")
@@ -212,12 +248,12 @@ with open(args.file) as inFile, open(outfiles[0], 'w') as outFile:
             logging.debug(commandline.get_line_east())
             logging.debug(commandline.get_line_west())
             #logging.debug("lineBeginning = {}".format(commandline.lineBeginning))
-            logging.debug("coordinates = {}".format(commandline.coordinates))
+            #logging.debug("coordinates = {}".format(commandline.coordinates))
             #logging.debug("lineEnd = {}".format(commandline.lineEnd))
-            logging.debug("coordinates_north = {}".format(commandline.coordinates_north))
-            logging.debug("coordinates_south = {}".format(commandline.coordinates_south))
-            logging.debug("coordinates_east = {}".format(commandline.coordinates_east))
-            logging.debug("coordinates_west = {}".format(commandline.coordinates_west))
+            #logging.debug("coordinates_north = {}".format(commandline.coordinates_north))
+            #logging.debug("coordinates_south = {}".format(commandline.coordinates_south))
+            #logging.debug("coordinates_east = {}".format(commandline.coordinates_east))
+            #logging.debug("coordinates_west = {}".format(commandline.coordinates_west))
             if toDirection[0] == "west":
                 outFile.write(commandline.get_line_west() + '\n')
             elif toDirection[0] == "east":
