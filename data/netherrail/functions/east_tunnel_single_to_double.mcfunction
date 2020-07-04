@@ -1,4 +1,5 @@
-fill ~ ~ ~-2 ~8 ~2 ~2 minecraft:air
+fill ~1 ~ ~-2 ~8 ~2 ~2 minecraft:air
+fill ~ ~1 ~-2 ~8 ~1 ~2 minecraft:air
 
 #Floor
 fill ~1 ~-1 ~-2 ~8 ~-1 ~2 minecraft:stone_bricks
