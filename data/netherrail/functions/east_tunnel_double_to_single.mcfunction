@@ -1,9 +1,7 @@
 fill ~1 ~ ~-3 ~8 ~2 ~1 minecraft:air
 
 #Floor
-fill ~1 ~-1 ~ ~7 ~-1 ~ minecraft:stone_bricks
-fill ~1 ~-1 ~-2 ~7 ~-1 ~-2 minecraft:stone_bricks
-fill ~5 ~-1 ~-1 ~7 ~-1 ~-1 minecraft:stone_bricks
+fill ~1 ~-1 ~-3 ~8 ~-1 ~1 minecraft:stone_bricks
 
 #Center floor
 fill ~1 ~ ~-1 ~4 ~ ~-1 minecraft:stone_brick_slab
