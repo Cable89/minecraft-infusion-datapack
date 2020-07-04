@@ -1,3 +1,5 @@
+#This file was automatically generated from .\east_tunnel.mcfunction 
+#Function for generating a single track tunnel
 fill ~-1 ~ ~1 ~1 ~2 ~8 minecraft:air
 fill ~-1 ~-1 ~1 ~1 ~-1 ~8 minecraft:stone_bricks
 fill ~ ~2 ~1 ~ ~2 ~7 minecraft:stone_brick_slab[type=top]
