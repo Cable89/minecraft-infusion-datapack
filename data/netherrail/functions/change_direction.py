@@ -143,9 +143,9 @@ class MinecraftCommand:
             self.coordinates_south = self.coordinates_east.copy()
             for coordinate in self.coordinates_east:
                 if i%3 == 0:
-                    self.coordinates_south[i+2] = (coordinate *(-1))
+                    self.coordinates_south[i+2] = coordinate
                 elif (i+1)%3 == 0:
-                    self.coordinates_south[i-2] = coordinate
+                    self.coordinates_south[i-2] = (coordinate *(-1))
                 else:
                     pass
                     #self.coordinates_south[i] = coordinate
@@ -162,9 +162,9 @@ class MinecraftCommand:
             self.coordinates_east = self.coordinates_south.copy()
             for coordinate in self.coordinates_south:
                 if i%3 == 0:
-                    self.coordinates_east[i+2] = coordinate
+                    self.coordinates_east[i+2] = (coordinate *(-1))
                 elif (i+1)%3 == 0:
-                    self.coordinates_east[i-2] = (coordinate *(-1))
+                    self.coordinates_east[i-2] = coordinate
                 else:
                     pass
                     #self.coordinates_east[i] = coordinate
