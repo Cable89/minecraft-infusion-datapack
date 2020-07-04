@@ -101,30 +101,32 @@ class MinecraftCommand:
                 i = i + 1
     '''
     def convert_east_to_west(self):
-        # To convert between east and west, X coordinate changes sign.
-        self.convert_change_sign(self.coordinates_east, self.coordinates_west, 0)
+        # To convert between east and west, X, and Z coordinate changes sign.
+        self.convert_flip(self.coordinates_east, self.coordinates_west)
     
     def convert_west_to_east(self):
-        # To convert between east and west, X coordinate changes sign.
-        self.convert_change_sign(self.coordinates_west, self.coordinates_east, 0)
+        # To convert between east and west, X, and Z coordinate changes sign.
+        self.convert_flip(self.coordinates_west, self.coordinates_east)
     
     def convert_north_to_south(self):
-        # To convert between north and south, Z coordinate changes sign.
-        self.convert_change_sign(self.coordinates_north, self.coordinates_south, 1)
+        # To convert between north and south, Z and X coordinate changes sign.
+        self.convert_flip(self.coordinates_north, self.coordinates_south)
     
     def convert_south_to_north(self):
-        # To convert between north and south, Z coordinate changes sign.
-        self.convert_change_sign(self.coordinates_south, self.coordinates_north, 1)
+        # To convert between north and south, Z and X coordinate changes sign.
+        self.convert_flip(self.coordinates_south, self.coordinates_north)
     
-    #change sign of coordinate given by numeral x=0, y=2, z=1
-    def convert_change_sign(self, fromCoordinates, toCoordinates, coordinate):
+    #change sign of X and Z
+    def convert_flip(self, fromCoordinates, toCoordinates):
         if fromCoordinates == []:
             logging.error("No coordinates to convert from")
             #exit(1)
         else:
-            i = coordinate
+            i = 0
             for coordinate in fromCoordinates:
                 if i%3 == 0:
+                    toCoordinates.append(coordinate * (-1))
+                elif (i+1)%3 == 0:
                     toCoordinates.append(coordinate * (-1))
                 else:
                     toCoordinates.append(coordinate)
@@ -170,24 +172,24 @@ class MinecraftCommand:
         if self.fromDirection == "east":
             for element in self.lineEnd:
                 if "facing=south" in element:
-                    self.lineEnd_north.append(element.replace("facing=south", "facing=east"))
+                    self.lineEnd_north.append(element.replace("facing=south", "facing=west"))
                     self.lineEnd_south.append(element.replace("facing=south", "facing=east"))
                     self.lineEnd_east.append(element)
-                    self.lineEnd_west.append(element)
+                    self.lineEnd_west.append(element.replace("facing=south", "facing=north"))
                 elif "facing=north" in element:
-                    self.lineEnd_north.append(element.replace("facing=north", "facing=west"))
+                    self.lineEnd_north.append(element.replace("facing=north", "facing=east"))
                     self.lineEnd_south.append(element.replace("facing=north", "facing=west"))
                     self.lineEnd_east.append(element)
-                    self.lineEnd_west.append(element)
+                    self.lineEnd_west.append(element.replace("facing=north", "facing=south"))
                 elif "facing=west" in element:
                     self.lineEnd_north.append(element)
                     self.lineEnd_south.append(element)
-                    self.lineEnd_east.append(element.replace("facing=west", "facing=north"))
+                    self.lineEnd_east.append(element)
                     self.lineEnd_west.append(element.replace("facing=west", "facing=north"))
                 elif "facing=east" in element:
                     self.lineEnd_north.append(element)
                     self.lineEnd_south.append(element)
-                    self.lineEnd_east.append(element.replace("facing=east", "facing=south"))
+                    self.lineEnd_east.append(element)
                     self.lineEnd_west.append(element.replace("facing=east", "facing=south"))
                 else:
                     self.lineEnd_north.append(element)
