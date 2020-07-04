@@ -1,3 +1,4 @@
+#Function for generating a single track easward tunnel
 fill ~1 ~ ~-1 ~8 ~2 ~1 minecraft:air
 fill ~1 ~-1 ~-1 ~8 ~-1 ~1 minecraft:stone_bricks
 fill ~1 ~2 ~ ~7 ~2 ~ minecraft:stone_brick_slab[type=top]
