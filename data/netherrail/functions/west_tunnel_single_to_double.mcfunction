@@ -1,5 +1,5 @@
 #This file was automatically generated from .\east_tunnel_single_to_double.mcfunction 
-fill ~-1 ~ ~-2 ~-8 ~2 ~2 minecraft:air
+fill ~ ~ ~-2 ~-8 ~2 ~2 minecraft:air
 
 #Floor
 fill ~-1 ~-1 ~-2 ~-8 ~-1 ~2 minecraft:stone_bricks
