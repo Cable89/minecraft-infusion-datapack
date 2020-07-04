@@ -1,4 +1,7 @@
-fill ~-1 ~ ~-1 ~1 ~2 ~-5 minecraft:air
+fill ~-2 ~-2 ~1 ~2 ~-2 ~2 minecraft:stone_bricks
+fill ~-1 ~-1 ~-2 ~1 ~-1 ~-5 minecraft:stone_bricks
+
+fill ~-1 ~ ~2 ~1 ~2 ~-5 minecraft:air
 fill ~ ~-1 ~-1 ~ ~-1 ~-5 minecraft:stone_bricks
 fill ~ ~2 ~-2 ~ ~2 ~-4 minecraft:stone_brick_slab[type=top]
 fill ~1 ~2 ~-2 ~1 ~2 ~-5 minecraft:stone_brick_stairs[facing=east, half=top]
@@ -32,14 +35,14 @@ setblock ~ ~-1 ~-1 minecraft:dispenser[facing=up]{Items:[{Slot:0,id:minecart,Cou
 setblock ~ ~-1 ~ minecraft:hopper[facing=south]
 setblock ~-1 ~-2 ~-1 minecraft:stone_bricks
 setblock ~1 ~-2 ~-1 minecraft:stone_bricks
-setblock ~-1 ~-1 ~-1 minecraft:redstone_wire
-setblock ~1 ~-1 ~-1 minecraft:redstone_wire
+setblock ~-1 ~-1 ~-1 minecraft:redstone_wire[east=side, north=side]
+setblock ~1 ~-1 ~-1 minecraft:redstone_wire[east=side, north=side]
 setblock ~-1 ~-1 ~ minecraft:stone_bricks
 setblock ~1 ~-1 ~ minecraft:stone_bricks
 setblock ~-1 ~ ~ minecraft:stone_button[face=floor]
 setblock ~1 ~ ~ minecraft:stone_button[face=floor]
-setblock ~-1 ~-1 ~1 minecraft:stone_bricks
-setblock ~1 ~-1 ~1 minecraft:stone_bricks
+#setblock ~-1 ~-1 ~1 minecraft:stone_bricks
+#setblock ~1 ~-1 ~1 minecraft:stone_bricks
 setblock ~ ~-1 ~2 minecraft:stone_bricks
 
 setblock ~ ~-1 ~1 minecraft:sand
@@ -50,3 +53,5 @@ setblock ~-2 ~ ~ minecraft:stone_brick_slab
 setblock ~2 ~ ~ minecraft:stone_brick_slab
 setblock ~-2 ~ ~1 minecraft:stone_brick_slab
 setblock ~2 ~ ~1 minecraft:stone_brick_slab
+setblock ~1 ~ ~2 minecraft:stone_brick_slab
+setblock ~-1 ~ ~2 minecraft:stone_brick_slab
