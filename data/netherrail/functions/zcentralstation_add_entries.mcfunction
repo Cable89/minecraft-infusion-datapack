@@ -46,6 +46,9 @@ execute at @s run function netherrail:south_tunnel_entry
 tp @s ~10 ~ ~11
 execute at @s run function netherrail:south_tunnel_entry
 
+#Back to origin to not confuse player
+tp @s ~ ~ ~
+
 #Cleanup in corners
 setblock ~12 ~ ~10 minecraft:air
 setblock ~12 ~ ~-10 minecraft:air
