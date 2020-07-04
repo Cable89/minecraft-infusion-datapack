@@ -134,6 +134,7 @@ class MinecraftCommand:
     
     def convert_east_to_south(self):
         # To convert between east and south, X and Z coordinates changes place.
+        # And X coordinate changes sign
         if self.coordinates_east == []:
             logging.error("No coordinates to convert from")
             #exit(1)
@@ -142,7 +143,7 @@ class MinecraftCommand:
             self.coordinates_south = self.coordinates_east.copy()
             for coordinate in self.coordinates_east:
                 if i%3 == 0:
-                    self.coordinates_south[i+2] = coordinate
+                    self.coordinates_south[i+2] = (coordinate *(-1))
                 elif (i+1)%3 == 0:
                     self.coordinates_south[i-2] = coordinate
                 else:
@@ -152,6 +153,7 @@ class MinecraftCommand:
     
     def convert_south_to_east(self):
         # To convert between east and south, X and Z coordinates changes place.
+        # And X coordinate changes sign
         if self.coordinates_south == []:
             logging.error("No coordinates to convert from")
             #exit(1)
@@ -162,7 +164,7 @@ class MinecraftCommand:
                 if i%3 == 0:
                     self.coordinates_east[i+2] = coordinate
                 elif (i+1)%3 == 0:
-                    self.coordinates_east[i-2] = coordinate
+                    self.coordinates_east[i-2] = (coordinate *(-1))
                 else:
                     pass
                     #self.coordinates_east[i] = coordinate
