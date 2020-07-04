@@ -1,8 +1,8 @@
+#This file was automatically generated from .\east_tunnel_double.mcfunction 
 fill ~-3 ~ ~-1 ~1 ~2 ~-8 minecraft:air
 
 #Floor
-fill ~ ~-1 ~-1 ~ ~-1 ~-8 minecraft:stone_bricks
-fill ~-2 ~-1 ~-1 ~-2 ~-1 ~-8 minecraft:stone_bricks
+fill ~-3 ~-1 ~-1 ~1 ~-1 ~-8 minecraft:stone_bricks
 
 #Center floor
 fill ~-1 ~ ~-1 ~-1 ~ ~-8 minecraft:stone_brick_slab
@@ -14,7 +14,7 @@ fill ~-1 ~2 ~-1 ~-1 ~2 ~-8 minecraft:stone_brick_slab[type=top]
 
 #Corners
 fill ~1 ~2 ~-1 ~1 ~2 ~-8 minecraft:stone_brick_stairs[facing=east, half=top]
-fill ~1 ~ ~-1 ~1 ~ ~-8 minecraft:stone_brick_stairs[facing=east, half=bottom]
+fill ~1 ~ ~-1 ~ ~ ~-8 minecraft:stone_brick_stairs[facing=east, half=bottom]
 fill ~-3 ~2 ~-1 ~-3 ~2 ~-8 minecraft:stone_brick_stairs[facing=west, half=top]
 fill ~-3 ~ ~-1 ~-3 ~ ~-8 minecraft:stone_brick_stairs[facing=west, half=bottom]
 

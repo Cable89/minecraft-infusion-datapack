@@ -25,7 +25,7 @@ setblock ~8 ~-1 ~-2 minecraft:redstone_block
 setblock ~8 ~3 ~ minecraft:glowstone
 setblock ~8 ~3 ~-2 minecraft:glowstone
 
-fill ~1 ~ ~ ~7 ~ ~ minecraft:rail[shape=east_west]
-fill ~1 ~ ~-2 ~7 ~ ~-2 minecraft:rail[shape=east_west]
-setblock ~8 ~ ~ minecraft:powered_rail[shape=east_west]
-setblock ~8 ~ ~-2 minecraft:powered_rail[shape=east_west]
+fill ~1 ~ ~ ~7 ~ ~ minecraft:rail
+fill ~1 ~ ~-2 ~7 ~ ~-2 minecraft:rail
+setblock ~8 ~ ~ minecraft:powered_rail
+setblock ~8 ~ ~-2 minecraft:powered_rail
