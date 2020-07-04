@@ -15,10 +15,10 @@ fill ~2 ~2 ~1 ~2 ~2 ~7 minecraft:stone_brick_slab[type=top]
 fill ~1 ~2 ~1 ~1 ~2 ~7 minecraft:stone_brick_slab[type=top]
 
 #Corners
-fill ~-1 ~2 ~1 ~-1 ~2 ~8 minecraft:stone_brick_stairs[facing=east, half=top]
-fill ~-1 ~ ~1 ~-1 ~ ~8 minecraft:stone_brick_stairs[facing=east, half=bottom]
-fill ~3 ~2 ~1 ~3 ~2 ~8 minecraft:stone_brick_stairs[facing=west, half=top]
-fill ~3 ~ ~1 ~3 ~ ~8 minecraft:stone_brick_stairs[facing=west, half=bottom]
+fill ~-1 ~2 ~1 ~-1 ~2 ~8 minecraft:stone_brick_stairs[facing=west, half=top]
+fill ~-1 ~ ~1 ~-1 ~ ~8 minecraft:stone_brick_stairs[facing=west, half=bottom]
+fill ~3 ~2 ~1 ~3 ~2 ~8 minecraft:stone_brick_stairs[facing=east, half=top]
+fill ~3 ~ ~1 ~3 ~ ~8 minecraft:stone_brick_stairs[facing=east, half=bottom]
 
 
 fill ~3 ~ ~8 ~2 ~ ~8 minecraft:stone_brick_stairs[facing=north, half=bottom]
