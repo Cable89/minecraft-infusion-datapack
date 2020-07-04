@@ -182,15 +182,15 @@ class MinecraftCommand:
                     self.lineEnd_east.append(element)
                     self.lineEnd_west.append(element.replace("facing=north", "facing=south"))
                 elif "facing=west" in element:
-                    self.lineEnd_north.append(element)
-                    self.lineEnd_south.append(element)
+                    self.lineEnd_north.append(element.replace("facing=west", "facing=north"))
+                    self.lineEnd_south.append(element.replace("facing=west", "facing=south"))
                     self.lineEnd_east.append(element)
-                    self.lineEnd_west.append(element.replace("facing=west", "facing=north"))
+                    self.lineEnd_west.append(element.replace("facing=west", "facing=east"))
                 elif "facing=east" in element:
-                    self.lineEnd_north.append(element)
-                    self.lineEnd_south.append(element)
+                    self.lineEnd_north.append(element.replace("facing=east", "facing=south"))
+                    self.lineEnd_south.append(element.replace("facing=east", "facing=north"))
                     self.lineEnd_east.append(element)
-                    self.lineEnd_west.append(element.replace("facing=east", "facing=south"))
+                    self.lineEnd_west.append(element.replace("facing=east", "facing=west"))
                 else:
                     self.lineEnd_north.append(element)
                     self.lineEnd_south.append(element)

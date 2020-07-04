@@ -40,7 +40,7 @@ fill ~ ~ ~1 ~ ~ ~1 minecraft:rail
 fill ~ ~ ~2 ~ ~ ~3 minecraft:rail
 fill ~-1 ~ ~1 ~-1 ~ ~2 minecraft:stone_brick_slab
 
-fill ~1 ~ ~ ~2 ~ ~ minecraft:stone_brick_stairs[facing=west, half=bottom]
-fill ~-1 ~ ~ ~-2 ~ ~ minecraft:stone_brick_stairs[facing=west, half=bottom]
-fill ~1 ~2 ~ ~2 ~2 ~ minecraft:stone_brick_stairs[facing=west, half=top]
-fill ~-1 ~2 ~ ~-2 ~2 ~ minecraft:stone_brick_stairs[facing=west, half=top]
+fill ~1 ~ ~ ~2 ~ ~ minecraft:stone_brick_stairs[facing=south, half=bottom]
+fill ~-1 ~ ~ ~-2 ~ ~ minecraft:stone_brick_stairs[facing=south, half=bottom]
+fill ~1 ~2 ~ ~2 ~2 ~ minecraft:stone_brick_stairs[facing=south, half=top]
+fill ~-1 ~2 ~ ~-2 ~2 ~ minecraft:stone_brick_stairs[facing=south, half=top]
