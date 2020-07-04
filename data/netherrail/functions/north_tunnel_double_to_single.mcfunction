@@ -21,10 +21,10 @@ fill ~-3 ~2 ~-1 ~-3 ~2 ~-8 minecraft:stone_brick_stairs[facing=west, half=top]
 fill ~-3 ~ ~-1 ~-3 ~ ~-8 minecraft:stone_brick_stairs[facing=west, half=bottom]
 
 
-fill ~-3 ~ ~-8 ~-2 ~ ~-8 minecraft:stone_brick_stairs[facing=south, half=bottom]
-fill ~ ~ ~-8 ~1 ~ ~-8 minecraft:stone_brick_stairs[facing=south, half=bottom]
-fill ~-3 ~2 ~-8 ~-2 ~2 ~-8 minecraft:stone_brick_stairs[facing=south, half=top]
-fill ~ ~2 ~-8 ~1 ~2 ~-8 minecraft:stone_brick_stairs[facing=south, half=top]
+fill ~-3 ~ ~-8 ~-2 ~ ~-8 minecraft:stone_brick_stairs[facing=north, half=bottom]
+fill ~ ~ ~-8 ~1 ~ ~-8 minecraft:stone_brick_stairs[facing=north, half=bottom]
+fill ~-3 ~2 ~-8 ~-2 ~2 ~-8 minecraft:stone_brick_stairs[facing=north, half=top]
+fill ~ ~2 ~-8 ~1 ~2 ~-8 minecraft:stone_brick_stairs[facing=north, half=top]
 
 #Column
 #fill ~-1 ~ ~-4 ~-1 ~2 ~-4 minecraft:chiseled_stone_bricks
