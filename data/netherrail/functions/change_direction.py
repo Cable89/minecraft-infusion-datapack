@@ -35,12 +35,38 @@ class MinecraftCommand:
         self.lineEnd = self.lineEnd[self.numCoordinates:]
         
         self.convert_all()
-        
+    
+    def get_line_east(self):
+        return ' '.join(self.lineBeginning + self.convert_coordinate_to_string(self.coordinates_east) + self.lineEnd)
+    
+    def get_line_west(self):
+        return ' '.join(self.lineBeginning + self.convert_coordinate_to_string(self.coordinates_west) + self.lineEnd)
+    
+    def get_line_north(self):
+        return ' '.join(self.lineBeginning + self.convert_coordinate_to_string(self.coordinates_north) + self.lineEnd)
+    
+    def get_line_south(self):
+        return ' '.join(self.lineBeginning + self.convert_coordinate_to_string(self.coordinates_south) + self.lineEnd)
+    
+    def convert_coordinate_to_string(self, coordinates):
+        coordinates_string = []
+        for element in coordinates:
+            if element == 0:
+                element = ''
+            coordinates_string.append('~' + str(element))
+        return coordinates_string
+    
     def convert_all(self):
         if self.fromDirection == "north":
             self.coordinates_north = self.coordinates
+            self.convert_north_to_south()
+            self.convert_south_to_east()
+            self.convert_east_to_west()
         elif self.fromDirection == "south":
             self.coordinates_south = self.coordinates
+            self.convert_south_to_north()
+            self.convert_south_to_east()
+            seld.convert_east_to_west()
         elif self.fromDirection == "east":
             self.coordinates_east = self.coordinates
             self.convert_east_to_west()
@@ -48,6 +74,9 @@ class MinecraftCommand:
             self.convert_south_to_north()
         elif self.fromDirection == "west":
             self.coordinates_west = self.coordinates
+            self.convert_west_to_east()
+            self.convert_east_to_south()
+            self.convert_south_to_north()
         else:
             logging.error("Invalid fromDirection")
     '''
@@ -84,6 +113,7 @@ class MinecraftCommand:
     def convert_change_sign(self, fromCoordinates, toCoordinates, coordinate):
         if fromCoordinates == []:
             logging.error("No coordinates to convert from")
+            #exit(1)
         else:
             i = coordinate
             for coordinate in fromCoordinates:
@@ -94,9 +124,10 @@ class MinecraftCommand:
                 i = i + 1
     
     def convert_east_to_south(self):
-        # To convert from east to west, X and Z coordinates changes place.
+        # To convert between east and south, X and Z coordinates changes place.
         if self.coordinates_east == []:
             logging.error("No coordinates to convert from")
+            #exit(1)
         else:
             i = 0
             self.coordinates_south = self.coordinates_east.copy()
@@ -108,6 +139,24 @@ class MinecraftCommand:
                 else:
                     pass
                     #self.coordinates_south[i] = coordinate
+                i = i + 1
+    
+    def convert_south_to_east(self):
+        # To convert between east and south, X and Z coordinates changes place.
+        if self.coordinates_south == []:
+            logging.error("No coordinates to convert from")
+            #exit(1)
+        else:
+            i = 0
+            self.coordinates_east = self.coordinates_south.copy()
+            for coordinate in self.coordinates_south:
+                if i%3 == 0:
+                    self.coordinates_east[i+2] = coordinate
+                elif (i+2)%3 == 0:
+                    self.coordinates_east[i-1] = coordinate
+                else:
+                    pass
+                    #self.coordinates_east[i] = coordinate
                 i = i + 1
 
 validDirections = ["north", "south", "east", "west"]
@@ -144,18 +193,42 @@ else:
 
 logging.info("ToDirection = {}".format(toDirection))
 
-with open(args.file) as inFile:
+outfiles = []
+for direction in toDirection:
+    outfiles.append(args.file.replace(fromDirection, direction))
+
+logging.info("Outfiles: {}".format(outfiles))
+
+with open(args.file) as inFile, open(outfiles[0], 'w') as outFile:
     line = inFile.readline()
+    outFile.write("#This file was automatically generated from {} \n".format(args.file))
     while line != '':
         line = line.strip('\n')
         logging.debug(line)
-        commandline = MinecraftCommand(line, fromDirection)
-        logging.debug("lineBeginning = {}".format(commandline.lineBeginning))
-        logging.debug("coordinates = {}".format(commandline.coordinates))
-        logging.debug("lineEnd = {}".format(commandline.lineEnd))
-        logging.debug("coordinates_north = {}".format(commandline.coordinates_north))
-        logging.debug("coordinates_south = {}".format(commandline.coordinates_south))
-        logging.debug("coordinates_east = {}".format(commandline.coordinates_east))
-        logging.debug("coordinates_west = {}".format(commandline.coordinates_west))
+        if line != '':
+            commandline = MinecraftCommand(line, fromDirection)
+            logging.debug(commandline.get_line_north())
+            logging.debug(commandline.get_line_south())
+            logging.debug(commandline.get_line_east())
+            logging.debug(commandline.get_line_west())
+            #logging.debug("lineBeginning = {}".format(commandline.lineBeginning))
+            logging.debug("coordinates = {}".format(commandline.coordinates))
+            #logging.debug("lineEnd = {}".format(commandline.lineEnd))
+            logging.debug("coordinates_north = {}".format(commandline.coordinates_north))
+            logging.debug("coordinates_south = {}".format(commandline.coordinates_south))
+            logging.debug("coordinates_east = {}".format(commandline.coordinates_east))
+            logging.debug("coordinates_west = {}".format(commandline.coordinates_west))
+            if toDirection[0] == "west":
+                outFile.write(commandline.get_line_west() + '\n')
+            elif toDirection[0] == "east":
+                outFile.write(commandline.get_line_east() + '\n')
+            elif toDirection[0] == "north":
+                outFile.write(commandline.get_line_north() + '\n')
+            elif toDirection[0] == "south":
+                outFile.write(commandline.get_line_south() + '\n')
+        else:
+            outFile.write('\n')
         line = inFile.readline()
+    inFile.close()
+    outFile.close()
 
