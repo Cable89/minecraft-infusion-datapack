@@ -29,3 +29,15 @@ fill ~1 ~ ~ ~7 ~ ~ minecraft:rail
 fill ~1 ~ ~-2 ~7 ~ ~-2 minecraft:rail
 setblock ~8 ~ ~ minecraft:powered_rail
 setblock ~8 ~ ~-2 minecraft:powered_rail
+
+#Replace sidewalls
+fill ~1 ~1 ~1 ~8 ~1 ~1 minecraft:white_concrete replace minecraft:netherrack
+fill ~1 ~1 ~-3 ~8 ~1 ~-3 minecraft:white_concrete replace minecraft:netherrack
+fill ~1 ~1 ~1 ~8 ~1 ~1 minecraft:white_concrete replace minecraft:blackstone
+fill ~1 ~1 ~-3 ~8 ~1 ~-3 minecraft:white_concrete replace minecraft:blackstone
+fill ~1 ~1 ~1 ~8 ~1 ~1 minecraft:white_concrete replace minecraft:basalt
+fill ~1 ~1 ~-3 ~8 ~1 ~-3 minecraft:white_concrete replace minecraft:basalt
+fill ~1 ~1 ~1 ~8 ~1 ~1 minecraft:white_concrete replace minecraft:nether_gold_ore
+fill ~1 ~1 ~-3 ~8 ~1 ~-3 minecraft:white_concrete replace minecraft:nether_gold_ore
+fill ~1 ~1 ~1 ~8 ~1 ~1 minecraft:white_concrete replace minecraft:nether_quartz_ore
+fill ~1 ~1 ~-3 ~8 ~1 ~-3 minecraft:white_concrete replace minecraft:nether_quartz_ore
