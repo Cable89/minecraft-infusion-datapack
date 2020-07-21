@@ -73,7 +73,7 @@ class MinecraftCommand:
             self.coordinates_south = self.coordinates
             self.convert_south_to_north()
             self.convert_south_to_east()
-            seld.convert_east_to_west()
+            self.convert_east_to_west()
         elif self.fromDirection == "east":
             self.coordinates_east = self.coordinates
             self.convert_east_to_west()
