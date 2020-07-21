@@ -44,3 +44,15 @@ fill ~1 ~ ~ ~2 ~ ~ minecraft:stone_brick_stairs[facing=south, half=bottom]
 fill ~-1 ~ ~ ~-2 ~ ~ minecraft:stone_brick_stairs[facing=south, half=bottom]
 fill ~1 ~2 ~ ~2 ~2 ~ minecraft:stone_brick_stairs[facing=south, half=top]
 fill ~-1 ~2 ~ ~-2 ~2 ~ minecraft:stone_brick_stairs[facing=south, half=top]
+
+#Replace sidewalls
+fill ~3 ~1 ~1 ~3 ~1 ~-8 minecraft:white_concrete replace minecraft:netherrack
+fill ~-3 ~1 ~1 ~-3 ~1 ~-8 minecraft:white_concrete replace minecraft:netherrack
+fill ~3 ~1 ~1 ~3 ~1 ~-8 minecraft:white_concrete replace minecraft:blackstone
+fill ~-3 ~1 ~1 ~-3 ~1 ~-8 minecraft:white_concrete replace minecraft:blackstone
+fill ~3 ~1 ~1 ~3 ~1 ~-8 minecraft:white_concrete replace minecraft:basalt
+fill ~-3 ~1 ~1 ~-3 ~1 ~-8 minecraft:white_concrete replace minecraft:basalt
+fill ~3 ~1 ~1 ~3 ~1 ~-8 minecraft:white_concrete replace minecraft:nether_gold_ore
+fill ~-3 ~1 ~1 ~-3 ~1 ~-8 minecraft:white_concrete replace minecraft:nether_gold_ore
+fill ~3 ~1 ~1 ~3 ~1 ~-8 minecraft:white_concrete replace minecraft:nether_quartz_ore
+fill ~-3 ~1 ~1 ~-3 ~1 ~-8 minecraft:white_concrete replace minecraft:nether_quartz_ore
