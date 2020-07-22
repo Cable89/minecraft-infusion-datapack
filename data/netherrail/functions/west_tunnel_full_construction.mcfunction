@@ -145,7 +145,3 @@ execute at @s run function netherrail:west_tunnel
 execute at @s run tp @s ~-8 ~ ~
 execute at @s run function netherrail:west_tunnel
 execute at @s run function netherrail:west_tunnel
-execute at @s run fill ~-9 ~ ~ ~-24 ~2 ~ minecraft:air
-execute at @s run fill ~-9 ~ ~ ~-24 ~2 ~ minecraft:air
-execute at @s run setblock ~-24 ~-1 ~ minecraft:gold_block
-execute at @s run setblock ~-24 ~-1 ~ minecraft:gold_block
