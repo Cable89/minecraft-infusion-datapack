@@ -1,4 +1,4 @@
-#This file was automatically generated from .\east_tunnel_double.mcfunction 
+#This file was automatically generated from east_tunnel_double.mcfunction 
 fill ~-3 ~ ~-1 ~1 ~2 ~-8 minecraft:air
 
 #Floor
@@ -38,7 +38,13 @@ fill ~2 ~1 ~-1 ~2 ~1 ~-8 minecraft:white_concrete replace minecraft:blackstone
 fill ~-4 ~1 ~-1 ~-4 ~1 ~-8 minecraft:white_concrete replace minecraft:blackstone
 fill ~2 ~1 ~-1 ~2 ~1 ~-8 minecraft:white_concrete replace minecraft:basalt
 fill ~-4 ~1 ~-1 ~-4 ~1 ~-8 minecraft:white_concrete replace minecraft:basalt
+fill ~2 ~1 ~-1 ~2 ~1 ~-8 minecraft:white_concrete replace minecraft:soul_soil
+fill ~-4 ~1 ~-1 ~-4 ~1 ~-8 minecraft:white_concrete replace minecraft:soul_soil
+fill ~2 ~1 ~-1 ~2 ~1 ~-8 minecraft:white_concrete replace minecraft:soul_sand
+fill ~-4 ~1 ~-1 ~-4 ~1 ~-8 minecraft:white_concrete replace minecraft:soul_sand
 fill ~2 ~1 ~-1 ~2 ~1 ~-8 minecraft:white_concrete replace minecraft:nether_gold_ore
 fill ~-4 ~1 ~-1 ~-4 ~1 ~-8 minecraft:white_concrete replace minecraft:nether_gold_ore
 fill ~2 ~1 ~-1 ~2 ~1 ~-8 minecraft:white_concrete replace minecraft:nether_quartz_ore
 fill ~-4 ~1 ~-1 ~-4 ~1 ~-8 minecraft:white_concrete replace minecraft:nether_quartz_ore
+fill ~2 ~1 ~-1 ~2 ~1 ~-8 minecraft:white_concrete replace minecraft:lava
+fill ~-4 ~1 ~-1 ~-4 ~1 ~-8 minecraft:white_concrete replace minecraft:lava
