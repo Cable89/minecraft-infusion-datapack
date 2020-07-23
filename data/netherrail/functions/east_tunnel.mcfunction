@@ -20,7 +20,13 @@ fill ~1 ~1 ~2 ~8 ~1 ~2 minecraft:white_concrete replace minecraft:blackstone
 fill ~1 ~1 ~-2 ~8 ~1 ~-2 minecraft:white_concrete replace minecraft:blackstone
 fill ~1 ~1 ~2 ~8 ~1 ~2 minecraft:white_concrete replace minecraft:basalt
 fill ~1 ~1 ~-2 ~8 ~1 ~-2 minecraft:white_concrete replace minecraft:basalt
+fill ~1 ~1 ~2 ~8 ~1 ~2 minecraft:white_concrete replace minecraft:soul_soil
+fill ~1 ~1 ~-2 ~8 ~1 ~-2 minecraft:white_concrete replace minecraft:soul_soil
+fill ~1 ~1 ~2 ~8 ~1 ~2 minecraft:white_concrete replace minecraft:soul_sand
+fill ~1 ~1 ~-2 ~8 ~1 ~-2 minecraft:white_concrete replace minecraft:soul_sand
 fill ~1 ~1 ~2 ~8 ~1 ~2 minecraft:white_concrete replace minecraft:nether_gold_ore
 fill ~1 ~1 ~-2 ~8 ~1 ~-2 minecraft:white_concrete replace minecraft:nether_gold_ore
 fill ~1 ~1 ~2 ~8 ~1 ~2 minecraft:white_concrete replace minecraft:nether_quartz_ore
 fill ~1 ~1 ~-2 ~8 ~1 ~-2 minecraft:white_concrete replace minecraft:nether_quartz_ore
+fill ~1 ~1 ~2 ~8 ~1 ~2 minecraft:white_concrete replace minecraft:lava
+fill ~1 ~1 ~-2 ~8 ~1 ~-2 minecraft:white_concrete replace minecraft:lava

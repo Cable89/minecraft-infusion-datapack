@@ -1,4 +1,4 @@
-#This file was automatically generated from .\east_tunnel.mcfunction 
+#This file was automatically generated from east_tunnel.mcfunction 
 #Function for generating a single track tunnel
 fill ~-1 ~ ~-1 ~1 ~2 ~-8 minecraft:air
 fill ~-1 ~-1 ~-1 ~1 ~-1 ~-8 minecraft:stone_bricks
@@ -21,7 +21,13 @@ fill ~2 ~1 ~-1 ~2 ~1 ~-8 minecraft:white_concrete replace minecraft:blackstone
 fill ~-2 ~1 ~-1 ~-2 ~1 ~-8 minecraft:white_concrete replace minecraft:blackstone
 fill ~2 ~1 ~-1 ~2 ~1 ~-8 minecraft:white_concrete replace minecraft:basalt
 fill ~-2 ~1 ~-1 ~-2 ~1 ~-8 minecraft:white_concrete replace minecraft:basalt
+fill ~2 ~1 ~-1 ~2 ~1 ~-8 minecraft:white_concrete replace minecraft:soul_soil
+fill ~-2 ~1 ~-1 ~-2 ~1 ~-8 minecraft:white_concrete replace minecraft:soul_soil
+fill ~2 ~1 ~-1 ~2 ~1 ~-8 minecraft:white_concrete replace minecraft:soul_sand
+fill ~-2 ~1 ~-1 ~-2 ~1 ~-8 minecraft:white_concrete replace minecraft:soul_sand
 fill ~2 ~1 ~-1 ~2 ~1 ~-8 minecraft:white_concrete replace minecraft:nether_gold_ore
 fill ~-2 ~1 ~-1 ~-2 ~1 ~-8 minecraft:white_concrete replace minecraft:nether_gold_ore
 fill ~2 ~1 ~-1 ~2 ~1 ~-8 minecraft:white_concrete replace minecraft:nether_quartz_ore
 fill ~-2 ~1 ~-1 ~-2 ~1 ~-8 minecraft:white_concrete replace minecraft:nether_quartz_ore
+fill ~2 ~1 ~-1 ~2 ~1 ~-8 minecraft:white_concrete replace minecraft:lava
+fill ~-2 ~1 ~-1 ~-2 ~1 ~-8 minecraft:white_concrete replace minecraft:lava
